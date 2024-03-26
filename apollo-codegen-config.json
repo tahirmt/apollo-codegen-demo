@@ -1,0 +1,39 @@
+{
+  "schemaNamespace" : "API",
+  "input" : {
+    "operationSearchPaths" : [
+      "**/*.graphql"
+    ],
+    "schemaSearchPaths" : [
+      "**/*.graphqls"
+    ]
+  },
+  "output" : {
+    "testMocks" : {
+      "swiftPackage" : {
+      }
+    },
+    "schemaTypes" : {
+      "path" : "./API",
+      "moduleType" : {
+        "swiftPackageManager" : {
+          "name" : "API"
+        }
+      }
+    },
+    "operations" : {
+      "inSchemaModule" : {
+      }
+    }
+  },
+  "options": {
+    "apqs": "automaticallyPersist",
+    "fieldMerging": "none",
+    "cocoapodsCompatibleImportStatements": false,
+    "selectionSetInitializers" : {
+      "operations": true,
+      "namedFragments": true,
+      "localCacheMutations" : true
+    }
+  }
+}

@@ -1,0 +1,33 @@
+schema {
+  query: RootQueryType
+}
+
+type RootQueryType {
+  node(
+    id: ID!
+  ): Node
+}
+
+interface Node {
+  """The ID of the object."""
+  id: ID!
+}
+
+"""Special node with cars"""
+type SomeSpecialNode implements Node {
+  id: ID!
+  cars: [Car]
+}
+
+type Car implements Node {
+  id: ID!
+  name: String!
+  roofType: String
+}
+
+type Truck implements Node {
+  id: ID!
+  name: String!
+  roofType: String
+  isRefrigerated: Boolean!
+}

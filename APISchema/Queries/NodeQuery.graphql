@@ -1,0 +1,31 @@
+query Node($sectionId: ID!) {
+    node(id: $sectionId) {
+		... NodeFragment
+    }
+}
+
+fragment NodeFragment on Node {
+	... CarFragment
+	... TruckFragment
+	... SomeSpecialNodeFragment
+}
+
+fragment CarFragment on Car {
+	id
+	name
+	roofType
+}
+
+fragment TruckFragment on Truck {
+	id
+	name
+	roofType
+	isRefrigerated
+}
+
+fragment SomeSpecialNodeFragment on SomeSpecialNode {
+	id
+	cars {
+		... CarFragment
+	}
+}
